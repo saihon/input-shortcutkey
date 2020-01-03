@@ -37,7 +37,7 @@ const bindings = (keys: any, funcName: string) => {
 const initialize = (items: {[key: string]: any}): void => {
     let keymap: any = {};
     if (Object.keys(items).length == 0) {
-        chrome.storage.sync.set(DefaultKeymap);
+        chrome.storage.local.set(DefaultKeymap);
         keymap = DefaultKeymap;
     } else {
         keymap = items;
@@ -49,7 +49,7 @@ const initialize = (items: {[key: string]: any}): void => {
     }
 };
 
-chrome.storage.sync.get(initialize);
+chrome.storage.local.get(initialize);
 
 function onChanged(changes: {[key: string]: chrome.storage.StorageChange;},
                    areaName: string) {
