@@ -1,0 +1,7 @@
+
+*.xpi
+*.crx
+*.pem
+
+dist/
+node_modules/
